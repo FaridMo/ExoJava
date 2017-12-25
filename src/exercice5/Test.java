@@ -12,7 +12,7 @@ public class Test {
 			a = clavier.nextInt();
 		
 	
-		if(a<=20){ //* debut de la premier boucle pour que le nombre soit compris entre 0 et 20 **
+		if(a<=20){ //* debut de la premiere boucle pour que le nombre soit compris entre 0 et 20 **
 				
 				if(a>=0){//** debut de la deuxieme boucle pour le cacul du factoriel pour un nombre saisie au clavier **
 					System.out.println("Le factoriel de "+a+" est : "+Factoriel.calculFacto(a));
