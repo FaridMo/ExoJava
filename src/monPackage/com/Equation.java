@@ -40,7 +40,6 @@ public class Equation {
 		double a,b,c,x,x1,x2,delta;
 		
 		
-		
 		@SuppressWarnings("resource")
 		Scanner clavier = new Scanner(System.in);
 			 
@@ -61,7 +60,7 @@ public class Equation {
 					x1=(((-b)-(sqrt(delta)))/(2*a));
 					x2=(((-b)+(sqrt(delta)))/(2*a));
 					if(delta == 0){
-						System.out.print("L'équation");
+						System.out.print("L'équation ");
 						calcul(a,b,c);
 								
 						System.out.println(" n'admet aucune solution");
@@ -72,7 +71,7 @@ public class Equation {
 						System.out.print("L'equation ");
 						calcul(a,b,c);
 						System.out.println(" admet deux solutions:");
-						System.out.println(" x1= "+df.format(x1)+"\n x2 = "+df.format(x2));
+						System.out.println(" x1 =  "+df.format(x1)+"\n x2 = "+df.format(x2));
 						
 						
 					}
