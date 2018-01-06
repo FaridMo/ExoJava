@@ -2,7 +2,7 @@ package monPackage.com;
 
 import java.util.Formatter;
 
-public class CompteBancaire {
+public class CompteBancaire{
 
 	private int rib;
 	private double solde;
@@ -61,37 +61,38 @@ public class CompteBancaire {
 	
 	//méthode pour débiter un compte
 	public void débiter(double montant_debit){
-		solde-=montant_debit;
 		
 		if(solde<montant_debit){
 			System.out.println("Solde insuffisant !");
 		}else{
-			System.out.println("Opération effectué avec succès !");
+			solde = solde-montant_debit;
+			System.out.println("le solde est : "+solde+"\nOpération effectuée avec succès !");
 		}
 	}
 	
 
 	//méthode pour créditer un compte
 	public void créditer(double montant_credit){
-		solde+=montant_credit;
 		if(solde<montant_credit){
 			System.out.println("Solde insuffisant !");
 		}else{
-			System.out.println("Opération effectué avec succès !");
+			solde=solde+montant_credit;
+			System.out.println("le solde est : "+solde+"\nOpération effectuée avec succès !");
 		}
 	}
 	
 	//méthode permettant de fermer un compte
 	@SuppressWarnings("null")
 	public void fermerCompte(){
-		Formatter c = null;
+		Formatter c=null;
 		c.close();
 	}
 	
 	
 	public static void main(String[] a){
-		CompteBancaire compte = new CompteBancaire(1234567890,200000,"Compte Courant","HASSAN","23/01/2018");
+		CompteBancaire compte = new CompteBancaire(1234567890,300000,"Compte Courant","HASSAN","23/01/2018");
 		
+	
 		System.out.println("*************************");
 		System.out.println("N° du compte : "+compte.getRib());
 		System.out.println("Nom du propriétaire : "+compte.getNomProprietaire());
@@ -102,6 +103,22 @@ public class CompteBancaire {
 		
 		
 		
+		System.out.println("Solde débité de 100000 fcfa :");
+		compte.débiter(100000);
+		System.out.println("----------------------------");
+		System.out.println("Solde débuté de 400000 fcfa :");
+		compte.créditer(400000);
+		
+		System.out.println("##########################");
+		System.out.println("Solde crédité de 200000 fcfa :");
+		compte.créditer(200000);
+		System.out.println("----------------------------");
+		System.out.println("Solde crédité de 500000 fcfa :");
+		compte.créditer(500000);
+		
+		System.out.println("----------------------------");
+		System.out.println("Fermeture du compte :");
+		compte.fermerCompte();
 		
 	}
 	
