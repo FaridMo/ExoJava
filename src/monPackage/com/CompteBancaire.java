@@ -63,10 +63,10 @@ public class CompteBancaire{
 	public void débiter(double montant_debit){
 		
 		if(solde<montant_debit){
-			System.out.println("Solde insuffisant !");
+			System.out.println("==> Solde insuffisant !");
 		}else{
 			solde = solde-montant_debit;
-			System.out.println("le solde est : "+solde+"\nOpération effectuée avec succès !");
+			System.out.println("le solde est : "+solde+"\n==> Opération effectuée avec succès !");
 		}
 	}
 	
@@ -74,10 +74,10 @@ public class CompteBancaire{
 	//méthode pour créditer un compte
 	public void créditer(double montant_credit){
 		if(solde<montant_credit){
-			System.out.println("Solde insuffisant !");
+			System.out.println("==> Solde insuffisant !");
 		}else{
 			solde=solde+montant_credit;
-			System.out.println("le solde est : "+solde+"\nOpération effectuée avec succès !");
+			System.out.println("le solde est : "+solde+"\n==> Opération effectuée avec succès !");
 		}
 	}
 	
@@ -89,16 +89,19 @@ public class CompteBancaire{
 	}
 	
 	
+	
 	public static void main(String[] a){
+		
+	try{	
 		CompteBancaire compte = new CompteBancaire(1234567890,300000,"Compte Courant","HASSAN","23/01/2018");
 		
-	
+		
 		System.out.println("*************************");
 		System.out.println("N° du compte : "+compte.getRib());
 		System.out.println("Nom du propriétaire : "+compte.getNomProprietaire());
 		System.out.println("Solde du compte : "+compte.getSolde());
 		System.out.println("Type de compte : "+compte.getType());
-		System.out.println("Date d'ouverture "+compte.getDate_ouverture());
+		System.out.println("Date d'ouverture : "+compte.getDate_ouverture());
 		System.out.println("*************************");
 		
 		
@@ -119,7 +122,9 @@ public class CompteBancaire{
 		System.out.println("----------------------------");
 		System.out.println("Fermeture du compte :");
 		compte.fermerCompte();
-		
+	}catch(Exception e){
+		System.out.println("==> Compte fermé");
+	}
 	}
 	
 }
