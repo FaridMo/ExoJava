@@ -109,7 +109,7 @@ public class CompteBancaire{
 		System.out.println("Solde débité de 100000 fcfa :");
 		compte.débiter(100000);
 		System.out.println("----------------------------");
-		System.out.println("Solde débuté de 400000 fcfa :");
+		System.out.println("Solde débité de 400000 fcfa :");
 		compte.créditer(400000);
 		
 		System.out.println("##########################");
