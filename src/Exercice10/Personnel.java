@@ -20,10 +20,7 @@ public class Personnel {
 	
 	
 	public static void main(String[] a){
-		
-		//Personnel p = new Personnel("macoumba","Thiam","Directeur",'M',12);
-		//Personnel p1 = new Personnel("fall","Binta","Directrice",'F',14);
-		
+
 		System.out.println("-----BIENVENU-----");
 		
 		Scanner clavier = new Scanner(System.in);
@@ -31,7 +28,7 @@ public class Personnel {
 		sexe=clavier.next().charAt(0);
 		if(sexe == 'M' || sexe == 'm'){
 			System.out.println("Entrez votre nom : ");
-			nom=clavier.next();
+			nom=clavier.next().toUpperCase();
 			System.out.println("Entrez votre prenom : ");
 			prenom=clavier.next();
 			System.out.println("Entrez votre matricule : ");
@@ -42,7 +39,7 @@ public class Personnel {
 			age=clavier.nextInt();
 		}else if(sexe == 'F' || sexe == 'f'){
 			System.out.println("Entrez votre nom : ");
-			nom=clavier.next();
+			nom=clavier.next().toUpperCase();
 			System.out.println("Entrez votre prenom : ");
 			prenom=clavier.next();
 			System.out.println("Entrez votre matricule : ");
@@ -62,15 +59,15 @@ public class Personnel {
 		System.out.println("Matricule : "+matricule);
 		System.out.println("Fonction : "+fonction);
 		System.out.print("Sexe : ");
-			if(sexe == 'M'){
+			if(sexe == 'M' || sexe == 'm'){
 				System.out.println("Masculin");
-			}else if(sexe == 'F'){
+			}else if(sexe == 'F' || sexe == 'f'){
 				System.out.println("Féminin");
 			}else{
 				System.out.println("Erreur");
 				clavier.close();
 			}
-		System.out.println("Age: "+age);
+		System.out.println("Age: "+age+" ans");
 		System.out.println("---------------------------------");
 	}
 }
