@@ -36,7 +36,6 @@ public class Cercle {
 	
 	public static void main(String[] args) {
 		Point p = new Point(2,3);
-		
 		Cercle c1 = new Cercle(p,4);
 		c1.affiche();
 		System.out.println("----------");
