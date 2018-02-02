@@ -11,6 +11,7 @@ public class ExisteMotDansListe {
 			if(liste[i].equals(mot)){
 				b=true;
 			}
+			
 		}
 		return b;
 	}
