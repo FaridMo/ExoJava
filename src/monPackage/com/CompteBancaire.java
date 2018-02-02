@@ -73,12 +73,8 @@ public class CompteBancaire{
 
 	//méthode pour créditer un compte
 	public void créditer(double montant_credit){
-		if(solde<montant_credit){
-			System.out.println("==> Solde insuffisant !");
-		}else{
 			solde=solde+montant_credit;
 			System.out.println("le solde est : "+solde+"\n==> Opération effectuée avec succès !");
-		}
 	}
 	
 	//méthode permettant de fermer un compte
@@ -108,9 +104,10 @@ public class CompteBancaire{
 		
 		System.out.println("Solde débité de 100000 fcfa :");
 		compte.débiter(100000);
+//		System.out.println(compte.débiter(100000));
 		System.out.println("----------------------------");
 		System.out.println("Solde débité de 400000 fcfa :");
-		compte.créditer(400000);
+		compte.débiter(400000);
 		
 		System.out.println("##########################");
 		System.out.println("Solde crédité de 200000 fcfa :");
