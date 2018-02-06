@@ -9,9 +9,9 @@ public class MajOccu {
 	public static void Occu(String s,char c){
 		
 		pattern = pattern.compile("[A-Z]"); /*cette ligne permet de spécifier les expressions régulières
-											* cherchées dans une chaine de caractère. Ici dans notre cas on 
-											* cherche les caractères de l'alphabet en Majuscule
-											*/
+						* cherchées dans une chaine de caractère. Ici dans notre cas on 
+						* cherche les caractères de l'alphabet en Majuscule
+						*/
 		matcher = pattern.matcher(s);
 	
 	while(matcher.find()){	
