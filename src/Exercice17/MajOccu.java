@@ -1,6 +1,5 @@
 package Exercice17;
 
-import java.io.Console;
 import java.util.regex.*;
 
 public class MajOccu {
@@ -9,9 +8,9 @@ public class MajOccu {
 	@SuppressWarnings({ "static-access"})
 	public static void Occu(String s,char c){
 		
-		pattern = pattern.compile("[A-Z]"); /*cette ligne permet de spécifier l'expression cherchée
-											*dans une chaine de caractère. Ici dans notre cas on 
-											*cherche les caractères de l'alphabet en Majuscule
+		pattern = pattern.compile("[A-Z]"); /*cette ligne permet de spécifier les expressions régulières
+											* cherchées dans une chaine de caractère. Ici dans notre cas on 
+											* cherche les caractères de l'alphabet en Majuscule
 											*/
 		matcher = pattern.matcher(s);
 	
