@@ -88,7 +88,7 @@ public class Tableaux {
 		System.out.println("Entrez le deuxième indice :");
 		int id2 = clavier.nextInt();
 		
-		if((id1<tableau.length && id1>=0) && (id1<tableau.length && id1>=0)){
+		if((id1<tableau.length && id1>=0) && (id2<tableau.length && id2>=0)){
 			System.out.println("### Tableau initial :: ###");
 			for(int i=0;i<tableau.length;i++){
 				System.out.print(tableau[i]);
