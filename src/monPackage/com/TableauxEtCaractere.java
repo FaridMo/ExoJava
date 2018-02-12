@@ -61,16 +61,18 @@ public class TableauxEtCaractere {
 		
 		System.out.println("Bienvenu(s)\nFaites votre choix :\n1- pour lire les entiers\n2- pour lire les caractères\n3- quitter");
 		int choix = clavier.nextInt();
-		if(choix == 1){
-			lireEntier();
-		}
-		if(choix == 2){
-			lireCaractere();
-		}
-		if(choix == 3){
+		
+		switch(choix){
+		case 1:
+			lireEntier();break;
+		case 2:
+			lireCaractere();break;
+		case 3:
 			System.out.println("à bientôt !");
 			System.exit(0);
 		}
+		
+	
 		if(choix!=1 && choix!=2 && choix!=3){
 			System.out.println("Votre choix n'existe pas ! Réessayez...");
 		}
