@@ -121,18 +121,17 @@ public class Tableaux {
 		
 		int choix = clavier.nextInt();
 		
-		if(choix == 1){
-			apparTableau();
-		}
-		if(choix == 2){
-			indiceNombre();
-		}
-		if(choix == 3){
-			indiceEchange();
-		}
-		if(choix == 0){
+		switch(choix){
+		case 1:
+			apparTableau();break;
+		case 2:
+			indiceNombre();break;
+		case 3:
+			indiceEchange();break;
+		case 4:
 			System.exit(0);
 		}
+		
 		
 		
 		
