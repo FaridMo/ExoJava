@@ -12,47 +12,45 @@ public class Tableaux {
 		System.out.println("Entrez un nombre : ");
 		int nombre = clavier.nextInt();
 		String res="non";
-		int indiceDeb = -1;
-		int indiceFin = -1;
+		int indice = -1;
+		int indiceDeb=-1;
 		int occurrence=0;
 		for(int i=0;i<tableau.length;i++)
 		{
-			if(nombre == tableau[i] && indiceDeb == -1)
-			{
-				res="oui";
-				indiceDeb=i;
-				occurrence++;
-				
-			}
+			/*pour trouver l'indice lorsque l'occurence est égale à 1, et en même temps c'est le dernier indice
+			pour n'importe quelle occurence.*/
 			if(nombre == tableau[i])
 			{
 				res="oui";
-				indiceFin=i;
+				indice=i;
 				occurrence++;
 				
 			}
+			//pour trouver l'indice du début lorsque l'occurence est supérieur à 1
+			if(nombre == tableau[i] && indiceDeb==-1){
+				indiceDeb=i;
+			}
+			
 		}
-		
-	if(indiceDeb!=-1 || indiceFin != -1)
-	{
-	  if(occurrence==0)
-	  {
-		if(res=="oui"){
-			System.out.println("Oui, le nombre est dans le tableau ! il apparaît "+(occurrence-1)+" fois !");
-			System.out.println("son indice est : "+indiceDeb);
+	
+	if(res=="oui"){
+		if(occurrence == 1){
+			System.out.println("Oui, le nombre "+nombre+" se trouve dans le tableau "
+					+ "et il apparaît 1 seule fois.\nIl se trouve à la position "+indice+" du tableau");
 		}
-	  }else
-	  {
-		  System.out.println("Oui, le nombre est dans le tableau ! il apparaît "+(occurrence-1)+" fois !");
-		  System.out.println("son indice de début = "+indiceDeb);
-		  System.out.println("son dernier indice  = "+indiceFin);
-	  }
-	}else
+		if(occurrence>1){
+			System.out.println("Oui, le nombre "+nombre+" se trouve dans le tableau "
+					+ "et il apparaît "+occurrence+" fois.\nSa première position est "+indiceDeb+"\n"
+							+ "Sa dernière position est "+indice);
+		}
+	}
+
+	if(res=="non")
 	{
-		System.out.println("Non, le nombre n'est pas dans le tableau !");
+		System.out.println("Non, le nombre "+nombre+" ne se trouve pas dans le tableau !");
 	}	
 		
-	}
+	 }
 	
 
 	 static void indiceNombre(){
@@ -65,15 +63,13 @@ public class Tableaux {
 			if(indice<tableau.length && indice>=0){
 				System.out.println("### Tableau initial :: ###");
 				for(int i=0;i<tableau.length;i++){
-					System.out.print(tableau[i]);
-					System.out.print("|");
+					System.out.print(tableau[i]+"|");
 				}
 				System.out.println(" ");
 				tableau[indice]=nombre;
 				System.out.println("### Tableau modifié :: ###");
 				for(int i=0;i<tableau.length;i++){
-					System.out.print(tableau[i]);
-					System.out.print("|");
+					System.out.print(tableau[i]+"|");
 				}
 				System.out.println(" ");
 			}else{
@@ -91,8 +87,7 @@ public class Tableaux {
 		if((id1<tableau.length && id1>=0) && (id2<tableau.length && id2>=0)){
 			System.out.println("### Tableau initial :: ###");
 			for(int i=0;i<tableau.length;i++){
-				System.out.print(tableau[i]);
-				System.out.print("|");
+				System.out.print(tableau[i]+"|");
 			}
 			System.out.println(" ");
 			int tmp=tableau[id1];
@@ -101,8 +96,7 @@ public class Tableaux {
 			System.out.println(" ");
 			System.out.println("### Tableau modifié :: ###");
 			for(int i=0;i<tableau.length;i++){
-				System.out.print(tableau[i]);
-				System.out.print("|");
+				System.out.print(tableau[i]+"|");
 			}
 		}else{
 			System.out.println("l'un ou l'autre indice n'existe pas !");
