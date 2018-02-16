@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class TableauxEtCaractere {
 	static Scanner clavier = new Scanner(System.in);
 	static DecimalFormat df = new DecimalFormat("#.##");
+	static int choix;
+	
 	static void lireEntier(){
 		double moyenne=0.0;
 		int[] table = new int[6];
@@ -27,6 +29,7 @@ public class TableauxEtCaractere {
 				plusGrandNombre=table[i];
 			}
 		}
+		
 		moyenne=moyenne/table.length;
 		System.out.println("");
 		System.out.println("\nLe plus grand nombre est : "+plusGrandNombre);
@@ -36,8 +39,8 @@ public class TableauxEtCaractere {
 	
 	
 	static void lireCaractere(){
-		int[] table = new int[6];
-		char plusGrandCaractere=(char) table[0];
+		char[] table = new char[6];
+		char plusGrandCaractere=table[0];
 		for(int i=0;i<table.length;i++){
 			System.out.println("Entrez le caractère "+(i+1)+":");
 			table[i]=clavier.next().charAt(0);
@@ -45,22 +48,22 @@ public class TableauxEtCaractere {
 		
 		System.out.println("Contenu du tableau : ");
 		for(int i=0;i<table.length;i++){
-			System.out.print((char) table[i]+"|");
+			System.out.print(table[i]+"|");
 		}
 		
 		for(int i=0;i<table.length;i++){
 			if(table[i]>plusGrandCaractere){
-				plusGrandCaractere=(char) table[i];
+				plusGrandCaractere=table[i];
 			}
 		}
-		System.out.println("\nLe plus grand caractère est :"+plusGrandCaractere);
+		System.out.println("\nLe plus grand caractère est : "+plusGrandCaractere);
 		
 	}
 	
 	public static void main(String[] args) {
 		
 		System.out.println("Bienvenu(s)\nFaites votre choix :\n1- pour lire les entiers\n2- pour lire les caractères\n3- quitter");
-		int choix = clavier.nextInt();
+		choix = clavier.nextInt();
 		
 		switch(choix){
 		case 1:
@@ -73,8 +76,21 @@ public class TableauxEtCaractere {
 		}
 		
 	
-		if(choix!=1 && choix!=2 && choix!=3){
+		while(choix!=1 && choix!=2 && choix!=3){
 			System.out.println("Votre choix n'existe pas ! Réessayez...");
+			System.out.println("Faites votre choix :\n1- pour lire les entiers\n2- pour lire les caractères\n3- quitter");
+			choix = clavier.nextInt();
+			
+			switch(choix){
+			case 1:
+				lireEntier();break;
+			case 2:
+				lireCaractere();break;
+			case 3:
+				System.out.println("à bientôt !");
+				System.exit(0);
+			}
+			
 		}
 	}
 }
