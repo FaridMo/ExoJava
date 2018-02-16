@@ -24,7 +24,6 @@ public class Tableaux {
 				res="oui";
 				indice=i;
 				occurrence++;
-				
 			}
 			//pour trouver l'indice du début lorsque l'occurence est supérieur à 1
 			if(nombre == tableau[i] && indiceDeb==-1){
@@ -36,7 +35,7 @@ public class Tableaux {
 	if(res=="oui"){
 		if(occurrence == 1){
 			System.out.println("Oui, le nombre "+nombre+" se trouve dans le tableau "
-					+ "et il apparaît 1 seule fois.\nIl se trouve à la position "+indice+" du tableau");
+					+ "et il apparaît "+occurrence+" seule fois.\nIl se trouve à la position "+indice+" du tableau");
 		}
 		if(occurrence>1){
 			System.out.println("Oui, le nombre "+nombre+" se trouve dans le tableau "
@@ -79,9 +78,9 @@ public class Tableaux {
 	
 	
 	static void indiceEchange(){
-		System.out.println("Entrez le premier indice :");
+		System.out.println("Saissisez un indice :");
 		int id1 = clavier.nextInt();
-		System.out.println("Entrez le deuxième indice :");
+		System.out.println("Saississez un autre indice :");
 		int id2 = clavier.nextInt();
 		
 		if((id1<tableau.length && id1>=0) && (id2<tableau.length && id2>=0)){
