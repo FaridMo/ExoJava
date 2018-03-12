@@ -7,12 +7,12 @@ public class GroupeTD {
 	List<Etudiant> groupeEtudiant = new ArrayList<Etudiant>();
 	
 	void ajouterEtudiant(Etudiant e){
-//	if(groupeEtudiant.size()>30){
-//		System.out.println("Le groupe est au complet !");
-//		groupeEtudiant.clear();
-//	}else{
+	if(groupeEtudiant.size()>30){
+		System.out.println("Le groupe est au complet !");
+		groupeEtudiant.clear();
+	}else{
 		groupeEtudiant.add(e);
-//	}
+	}
 		
 	}
 	
