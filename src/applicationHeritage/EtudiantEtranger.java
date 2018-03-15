@@ -13,8 +13,6 @@ public class EtudiantEtranger extends Etudiant {
 		System.out.println("--------");
 		super.affiche();
 		System.out.println("Pays d'origine : "+paysOrigine);
-		
-		//return "Pays d'origine : "+paysOrigine;
 	}
 
 	

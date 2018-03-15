@@ -1,6 +1,6 @@
 package applicationHeritage;
 
-import applicationHeritage.*;
+
 
 
 public class EtudiantSportif extends Etudiant {
@@ -16,7 +16,6 @@ public class EtudiantSportif extends Etudiant {
 		System.out.println("--------");
 		super.affiche();
 		System.out.println("Sport Pratiqué : "+sportPratiqué);
-		//return "Sport Pratiqué : "+sportPratiqué;
 	}
 
 	

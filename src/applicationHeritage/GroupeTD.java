@@ -9,7 +9,7 @@ public class GroupeTD {
 	void ajouterEtudiant(Etudiant e){
 	if(groupeEtudiant.size()>30){
 		System.out.println("Le groupe est au complet !");
-		groupeEtudiant.clear();
+		System.exit(0);
 	}else{
 		groupeEtudiant.add(e);
 	}
@@ -18,17 +18,21 @@ public class GroupeTD {
 	
 	void afficherListe(){
 		for(int i=0;i<groupeEtudiant.size();i++){
-			Object obj = groupeEtudiant.get(i);
 			
-			if(obj instanceof Etudiant){
-				((Etudiant) obj).affiche();
+			Etudiant objet = groupeEtudiant.get(i);
+			
+			if(objet instanceof Etudiant){
+				((Etudiant) objet).affiche();
 			}
-			if(obj instanceof EtudiantEtranger){
-				((EtudiantEtranger) obj).affiche();
-			}		
-			if(obj instanceof EtudiantSportif){
-				((EtudiantSportif) obj).affiche();
-			}
+//			if(objet instanceof EtudiantEtranger){
+//				((EtudiantEtranger) objet).affiche();
+//
+//			}		
+//			if(objet instanceof EtudiantSportif){
+//				((EtudiantSportif) objet).affiche();
+//				
+//			}
+//			objet.affiche();
 			
 			
 		}

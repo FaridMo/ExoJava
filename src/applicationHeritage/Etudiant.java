@@ -12,7 +12,7 @@ public class Etudiant {
 	
 	void affiche(){
 		System.out.println("Nom : "+nom+"\nPrenom: "+prenom+"\nAge : "+age);
-		//return "Nom : "+nom+"\nPrenom: "+prenom+"\nAge : "+age;
+		
 	}
 
 	
